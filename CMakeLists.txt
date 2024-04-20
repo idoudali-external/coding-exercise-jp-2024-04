@@ -52,7 +52,6 @@ else()
 endif()
 
 find_package(GTest REQUIRED)
-find_package(fmt REQUIRED)
 
 # Enable ctest in this project
 enable_testing()

@@ -4,7 +4,9 @@
 
 #include "libA/libA.h"
 
+using namespace Foo;
+
 int main(int argc, const char* argv[]) {
-  auto lib = new Library();
+
   return 0;
 }
