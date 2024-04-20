@@ -1,0 +1,18 @@
+# - Config file for the CppTemplate package
+# It defines the following variables
+#  CPPTEMPLATE_INCLUDE_DIRS - include directories for CppTempalte
+#  CPPTEMPLATE_LIBRARIES    - libraries to link against
+#  CPPTEMPLATE_EXECUTABLE   - the bar executable
+
+# Compute paths
+get_filename_component(CPPTEMPLATE_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+set(CPPTEMPLATE_INCLUDE_DIRS "@CONF_INCLUDE_DIRS@")
+
+# Our library dependencies (contains definitions for IMPORTED targets)
+if(NOT TARGET A AND NOT CppTemplate_BINARY_DIR)
+   include("${CPPTEMPLATE_CMAKE_DIR}/CppTemplateTargets.cmake")
+endif()
+
+# These are IMPORTED targets created by CPPTEMPLATETargets.cmake
+set(CPPTEMPLATE_LIBRARIES foo)
+set(CPPTEMPLATE_EXECUTABLE bar)
